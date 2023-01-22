@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_demo/controllers/cart_controller.dart';
 import 'package:getx_demo/controllers/shopping_controller.dart';
 
 class ShoppingPage extends StatelessWidget {
   ShoppingPage({Key? key}) : super(key: key);
   final shoppingController = Get.put(ShoppingController());
+  final cartController = Get.put(CartController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,8 +48,8 @@ class ShoppingPage extends StatelessWidget {
                                 ),
                                 MaterialButton(
                                   onPressed: () {
-                                    // cartController
-                                    //     .addToCart(controller.products[index]);
+                                    cartController
+                                        .addToCart(controller.products[index]);
                                   },
                                   color: Colors.blue,
                                   textColor: Colors.white,
@@ -58,11 +60,33 @@ class ShoppingPage extends StatelessWidget {
               );
             }),
           ),
-          Text("Total Amount: "),
+          GetX<CartController>(builder: (controller) {
+            return Text(
+              "Total Amount: \$ ${controller.totalPrice} ",
+              style: TextStyle(fontSize: 32, color: Colors.white),
+            );
+          }),
           SizedBox(
-            height: 100,
+            height: 150,
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {},
+        backgroundColor: Colors.amber,
+        icon: Icon(
+          Icons.add_shopping_cart_rounded,
+          color: Colors.black,
+        ),
+        label: GetX<CartController>(builder: (controller) {
+          return Text(
+            controller.cartCount.toString(),
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 24,
+            ),
+          );
+        }),
       ),
     );
   }

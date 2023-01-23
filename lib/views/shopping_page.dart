@@ -60,12 +60,26 @@ class ShoppingPage extends StatelessWidget {
               );
             }),
           ),
-          GetX<CartController>(builder: (controller) {
+          // GetBuilder<CartController>(
+          //   builder: ((controller) {
+          //     return Text(
+          //       'Total Amount: \$ ${controller.testAmount}',
+          //       style: TextStyle(fontSize: 32, color: Colors.white),
+          //     );
+          //   }),
+          // ),
+          // GetX<CartController>(builder: (controller) {
+          //   return Text(
+          //     "Total Amount: \$ ${controller.totalPrice} ",
+          //     style: TextStyle(fontSize: 32, color: Colors.white),
+          //   );
+          // }),
+          Obx((() {
             return Text(
-              "Total Amount: \$ ${controller.totalPrice} ",
+              "Total Amount: \$ ${cartController.totalPrice} ",
               style: TextStyle(fontSize: 32, color: Colors.white),
             );
-          }),
+          })),
           SizedBox(
             height: 150,
           ),

@@ -6,7 +6,11 @@ class CartController extends GetxController {
   int get cartCount => cartItems.length;
   double get totalPrice => cartItems.fold(0, (sum, item) => sum + item.price);
 
+  // var testAmount = 0.0;
+
   addToCart(Product product) {
     cartItems.add(product);
+    // testAmount = totalPrice;
+    // update();
   }
 }

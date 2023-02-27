@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_demo/views/homepage.dart';
 import 'package:getx_demo/views/shopping_page.dart';
 
 void main() {
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "SnackBar",
-      home: ShoppingPage(),
+      title: "ShopX",
+      home: HomePage(),
     );
   }
 }

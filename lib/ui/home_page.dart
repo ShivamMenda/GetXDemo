@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_demo/ui/image_picker_page.dart';
 import 'package:getx_demo/ui/state_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -61,6 +62,12 @@ class HomePage extends StatelessWidget {
               Get.to(() => StatePage());
             },
             child: Text("State Page"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Get.to(() => ImagePickerPage());
+            },
+            child: Text("Image Picker Page"),
           ),
         ],
       ),

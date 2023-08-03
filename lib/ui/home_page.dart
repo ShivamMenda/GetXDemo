@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_demo/ui/state_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,21 +9,21 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
+          title: const Text(
         "GetX Utils",
       )),
       body: Column(
         children: [
           Card(
             child: ListTile(
-              title: Text("GetX Dialog Alert"),
-              subtitle: Text("Dialog"),
+              title: const Text("GetX Dialog Alert"),
+              subtitle: const Text("Dialog"),
               onTap: () {
                 Get.defaultDialog(
                     title: "Delete Chat",
                     middleText: "Are you sure?",
-                    contentPadding: EdgeInsets.all(20),
-                    titlePadding: EdgeInsets.only(top: 20),
+                    contentPadding: const EdgeInsets.all(20),
+                    titlePadding: const EdgeInsets.only(top: 20),
                     textCancel: "No",
                     textConfirm: "Yes");
               },
@@ -30,22 +31,22 @@ class HomePage extends StatelessWidget {
           ),
           Card(
             child: ListTile(
-              title: Text("GetX Bottom Sheet"),
-              subtitle: Text("Bottom"),
+              title: const Text("GetX Bottom Sheet"),
+              subtitle: const Text("Theme Change"),
               onTap: () {
                 Get.bottomSheet(Container(
                   color: Colors.amber,
                   child: Column(children: [
                     ListTile(
-                      leading: Icon(Icons.light_mode),
-                      title: Text("Light Theme"),
+                      leading: const Icon(Icons.light_mode),
+                      title: const Text("Light Theme"),
                       onTap: () {
                         Get.changeTheme(ThemeData.light());
                       },
                     ),
                     ListTile(
-                      leading: Icon(Icons.dark_mode),
-                      title: Text("Dark Theme"),
+                      leading: const Icon(Icons.dark_mode),
+                      title: const Text("Dark Theme"),
                       onTap: () {
                         Get.changeTheme(ThemeData.dark());
                       },
@@ -54,6 +55,12 @@ class HomePage extends StatelessWidget {
                 ));
               },
             ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Get.to(() => StatePage());
+            },
+            child: Text("State Page"),
           ),
         ],
       ),

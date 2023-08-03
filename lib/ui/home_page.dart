@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_demo/ui/image_picker_page.dart';
+import 'package:getx_demo/ui/login_signup_page.dart';
 import 'package:getx_demo/ui/state_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -69,17 +70,26 @@ class HomePage extends StatelessWidget {
             },
             child: Text("Image Picker Page"),
           ),
+          ElevatedButton(
+            onPressed: () {
+              Get.to(() => LoginSignupPage());
+            },
+            child: Text("Login/Signup Page"),
+          ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        Get.snackbar(
-          "Test",
-          "Testing",
-          backgroundColor: const Color.fromARGB(157, 244, 67, 54),
-          colorText: Colors.white,
-          snackPosition: SnackPosition.BOTTOM,
-        ); //Get Snackbar
-      }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.snackbar(
+            "Test",
+            "Testing",
+            backgroundColor: const Color.fromARGB(157, 244, 67, 54),
+            colorText: Colors.white,
+            snackPosition: SnackPosition.BOTTOM,
+          ); //Get Snackbar
+        },
+        child: Icon(Icons.warning),
+      ),
     );
   }
 }

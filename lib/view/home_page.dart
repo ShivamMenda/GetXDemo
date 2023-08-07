@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_demo/ui/image_picker_page.dart';
-import 'package:getx_demo/ui/login_signup_page.dart';
-import 'package:getx_demo/ui/state_page.dart';
+import 'package:getx_demo/view/image_picker_page.dart';
+import 'package:getx_demo/view/login_signup_page.dart';
+import 'package:getx_demo/view/state_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -75,6 +75,12 @@ class HomePage extends StatelessWidget {
               Get.to(() => LoginSignupPage());
             },
             child: Text("Login/Signup Page"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Get.to(() => LoginSignupPage());
+            },
+            child: Text("API"),
           ),
         ],
       ),

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_demo/view/splash_screen.dart';
+import 'package:getx_demo/res/routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "GetX",
-      home: SplashScreen(),
+      getPages: AppRoutes.appRoutes(),
     );
   }
 }

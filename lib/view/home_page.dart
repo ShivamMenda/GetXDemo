@@ -75,7 +75,7 @@ class HomePage extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              Get.toNamed("/login_screen");
+              Get.toNamed("/api_screen");
             },
             child: Text("API"),
           ),

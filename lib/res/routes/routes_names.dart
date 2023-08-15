@@ -4,4 +4,5 @@ class RoutesNames {
   static const String homeScreen = "/home_screen";
   static const String stateScreen = "/state_screen";
   static const String imagePickScreen = "/image_pick_screen";
+  static const String apiScreen = "/api_screen";
 }
